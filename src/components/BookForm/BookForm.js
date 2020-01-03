@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
 class BookForm extends Component {
-  state = { description: '', note: '', price: '' };
+  constructor(props) {
+    super(props);
+    this.state = {
+      description: props.book ? props.book.description : '',
+      note: props.book ? props.book.note : '',
+      price: props.book ? (props.book.price / 100).toString() : '',
+      error: ''
+    };
+  }
 
   descriptionChangeHandler = e => {
     const description = e.target.value;
@@ -18,15 +26,30 @@ class BookForm extends Component {
 
   priceChangeHandler = e => {
     const price = e.target.value;
-    if (price.match(/^\d*(\.\d{0,2})?$/)) {
+    if (!price || price.match(/^\d{1,}(\.\d{0,2})?$/)) {
       this.setState(() => ({ price }));
+    }
+  };
+
+  submitHandler = e => {
+    e.preventDefault();
+    if (!this.state.description || !this.state.price) {
+      this.setState(() => ({ error: 'Please provider Description and Price' }));
+    } else {
+      this.setState(() => ({ error: '' }));
+      this.props.onSubmit({
+        description: this.state.description,
+        price: parseFloat(this.state.price) * 100,
+        note: this.state.note
+      });
     }
   };
 
   render() {
     return (
       <div>
-        <form>
+        {this.state.error.trim().length > 0 ? <p>{this.state.error}</p> : ''}
+        <form onSubmit={this.submitHandler}>
           <input
             type='text'
             placeholder='Description'

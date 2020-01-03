@@ -12,7 +12,8 @@ export const addBook = ({
     id: uuid(),
     description,
     note,
-    createdAt
+    createdAt,
+    price
   }
 });
 // REMOVE_BOOK

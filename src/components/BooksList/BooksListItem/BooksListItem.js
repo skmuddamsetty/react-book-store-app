@@ -1,17 +1,12 @@
 import React from 'react';
-import { removeBook } from '../../../actions/books';
-import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const BooksListItem = ({ description, price, createdAt, id, dispatch }) => (
   <div>
-    {description} - Price : {price} with id : {id} - created at : {createdAt}
-    <button
-      onClick={() => {
-        dispatch(removeBook({ id }));
-      }}
-    >
-      Remove
-    </button>
+    <Link to={`/edit-book/${id}`}>
+      <h3>{description}</h3>
+    </Link>
+    Price : {price} with id : {id} - created at : {createdAt}
   </div>
 );
-export default connect()(BooksListItem);
+export default BooksListItem;
