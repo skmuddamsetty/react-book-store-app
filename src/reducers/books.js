@@ -1,13 +1,5 @@
 // Books reducer
-const booksReducerDefaultState = [
-  {
-    description: 'My First Angular Book',
-    price: 450,
-    id: 1,
-    createdAt: 200
-  },
-  { description: 'My First React Book', price: 250, id: 2, createdAt: 100 }
-];
+const booksReducerDefaultState = [];
 
 export const booksReducer = (state = booksReducerDefaultState, action) => {
   switch (action.type) {
