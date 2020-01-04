@@ -47,28 +47,46 @@ class BookForm extends Component {
 
   render() {
     return (
-      <div>
+      <div className='container'>
         {this.state.error.trim().length > 0 ? <p>{this.state.error}</p> : ''}
         <form onSubmit={this.submitHandler}>
-          <input
-            type='text'
-            placeholder='Description'
-            autoFocus
-            value={this.state.description}
-            onChange={this.descriptionChangeHandler}
-          />
-          <input
-            type='text'
-            placeholder='Price'
-            value={this.state.price}
-            onChange={this.priceChangeHandler}
-          />
-          <textarea
-            placeholder='Add note for your book (optional)'
-            onChange={this.noteChangeHandler}
-            value={this.state.note}
-          ></textarea>
-          <button type='submit'>Add Book</button>
+          <div className='form-group'>
+            <label for='description'>Description</label>
+            <input
+              type='text'
+              placeholder='Description'
+              autoFocus
+              value={this.state.description}
+              onChange={this.descriptionChangeHandler}
+              className='form-control'
+              required
+              id='description'
+            />
+          </div>
+          <div className='form-group'>
+            <label for='price'>Price</label>
+            <input
+              type='text'
+              placeholder='Price'
+              value={this.state.price}
+              onChange={this.priceChangeHandler}
+              className='form-control'
+              id='price'
+            />
+          </div>
+          <div className='form-group'>
+            <label for='note'>Note</label>
+            <textarea
+              placeholder='Add note for your book (optional)'
+              onChange={this.noteChangeHandler}
+              value={this.state.note}
+              className='form-control'
+              id='note'
+            ></textarea>
+          </div>
+          <button type='submit' className='btn btn-success'>
+            Add Book
+          </button>
         </form>
       </div>
     );
