@@ -1,15 +1,34 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import './Header.css';
 
 const Header = () => (
-  <header>
-    <h1>Book Store</h1>
-    <NavLink to='/' activeClassName='is-active' exact={true}>
-      Dashboard
-    </NavLink>
-    <NavLink to='/add-book' activeClassName='is-active' exact={true}>
-      Add Book
-    </NavLink>
+  <header className='header'>
+    <ul className='nav nav-pills nav-justified'>
+      <li className='nav-item'>
+        <h4>Book Store</h4>
+      </li>
+      <li class='nav-item'>
+        <NavLink
+          to='/'
+          activeClassName='is-active'
+          className='nav-link'
+          exact={true}
+        >
+          Dashboard
+        </NavLink>
+      </li>
+      <li class='nav-item'>
+        <NavLink
+          to='/add-book'
+          activeClassName='is-active'
+          className='nav-link'
+          exact={true}
+        >
+          Add Book
+        </NavLink>
+      </li>
+    </ul>
   </header>
 );
 
