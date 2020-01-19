@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render books list with books 1`] = `
+<div>
+  <BooksListItem
+    createdAt={0}
+    description="React Book"
+    id="1"
+    key="0"
+    note="React Book Notes"
+    price={25}
+  />
+  <BooksListItem
+    createdAt={1}
+    description="Angular Book"
+    id="2"
+    key="1"
+    note="Angular Book Notes"
+    price={10}
+  />
+  <BooksListItem
+    createdAt={2}
+    description="Node Book"
+    id="3"
+    key="2"
+    note="Node Book Notes"
+    price={20}
+  />
+</div>
+`;
+
+exports[`should render books list with empty message 1`] = `
+<div>
+  <p>
+    No Books
+  </p>
+</div>
+`;

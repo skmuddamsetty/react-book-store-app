@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const BooksListItem = ({ description, price, createdAt, id, dispatch }) => (
+export const BooksListItem = ({ description, price, createdAt, id, dispatch }) => (
   <div>
     <Link to={`/edit-book/${id}`}>
       <h3>{description}</h3>

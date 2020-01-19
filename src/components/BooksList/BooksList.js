@@ -3,19 +3,16 @@ import { connect } from 'react-redux';
 import BooksListItem from './BooksListItem/BooksListItem';
 import { getVisibleBooks } from '../../selectors/books';
 
-const BooksList = props => (
+export const BooksList = props => (
   <div>
-    {props.books.map((book, idx) => {
-      return <BooksListItem {...book} key={idx} />;
-    })}
+    {
+      props.books === undefined || props.books.length === 0 ?
+        (<p>No Books</p>) : (props.books.map((book, idx) => {
+          return <BooksListItem {...book} key={idx} />;
+        }))
+    }
   </div>
 );
-
-// const ConnectedBooksList = connect(state => {
-//   return {
-//     books: state.books
-//   };
-// })(BooksList);
 
 const mapStateToProps = state => {
   return {

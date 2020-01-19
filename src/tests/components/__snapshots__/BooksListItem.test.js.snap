@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render book item 1`] = `
+<div>
+  <[object Object]
+    to="/edit-book/1"
+  >
+    <h3>
+      React Book
+    </h3>
+  </[object Object]>
+  Price : 
+  25
+   with id : 
+  1
+   - created at : 
+  0
+</div>
+`;

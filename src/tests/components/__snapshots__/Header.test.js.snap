@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render header correctly 1`] = `
+<header
+  className="header"
+>
+  <ul
+    className="nav nav-pills nav-justified"
+  >
+    <li
+      className="nav-item"
+    >
+      <h4>
+        Book Store
+      </h4>
+    </li>
+    <li
+      class="nav-item"
+    >
+      <[object Object]
+        activeClassName="is-active"
+        className="nav-link"
+        exact={true}
+        to="/"
+      >
+        Dashboard
+      </[object Object]>
+    </li>
+    <li
+      class="nav-item"
+    >
+      <[object Object]
+        activeClassName="is-active"
+        className="nav-link"
+        exact={true}
+        to="/add-book"
+      >
+        Add Book
+      </[object Object]>
+    </li>
+  </ul>
+</header>
+`;

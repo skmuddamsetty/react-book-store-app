@@ -1,20 +1,10 @@
-import uuid from 'uuid';
+// import uuid from 'uuid';
+import database from '../firebase/firebase';
 
 // ADD_BOOK
-export const addBook = ({
-  description = '',
-  note = '',
-  price = 0,
-  createdAt = 0
-} = {}) => ({
+export const addBook = book => ({
   type: 'ADD_BOOK',
-  book: {
-    id: uuid(),
-    description,
-    note,
-    createdAt,
-    price
-  }
+  book
 });
 // REMOVE_BOOK
 export const removeBook = ({ id } = {}) => ({
@@ -28,3 +18,17 @@ export const editBook = (id, updates) => ({
   id,
   updates
 });
+
+export const startAddBook = (bookData = {}) => {
+  return dispatch => {
+    const { description = '', note = '', price = 0, createdAt = 0 } = bookData;
+    const book = { description, note, price, createdAt };
+    return database
+      .ref('books')
+      .push(book)
+      .then(ref => {
+        dispatch(addBook({ id: ref.key, ...book }));
+      })
+      .catch();
+  };
+};

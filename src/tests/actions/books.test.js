@@ -14,27 +14,27 @@ test('should setup edit book action object', () => {
   });
 });
 
-test('should setup add book action object', () => {
-  const bookData = {
-    description: 'First React Book',
-    price: 3200,
-    createdAt: 1000,
-    note: 'This is my first react book'
-  };
-  const action = addBook(bookData);
-  expect(action).toEqual({
-    type: 'ADD_BOOK',
-    book: { ...bookData, id: expect.any(String) }
-  });
-});
+// test('should setup add book action object', () => {
+//   const bookData = {
+//     description: 'First React Book',
+//     price: 3200,
+//     createdAt: 1000,
+//     note: 'This is my first react book'
+//   };
+//   const action = addBook(bookData);
+//   expect(action).toEqual({
+//     type: 'ADD_BOOK',
+//     book: { ...bookData, id: expect.any(String) }
+//   });
+// });
 
-test('should setup add book action object with default values', () => {
-  const action = addBook({});
-  expect(action).toEqual({
-    type: 'ADD_BOOK',
-    book: {
-      id: expect.any(String),
-      ...action.book
-    }
-  });
-});
+// test('should setup add book action object with default values', () => {
+//   const action = addBook({});
+//   expect(action).toEqual({
+//     type: 'ADD_BOOK',
+//     book: {
+//       id: expect.any(String),
+//       ...action.book
+//     }
+//   });
+// });
