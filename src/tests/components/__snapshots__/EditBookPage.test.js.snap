@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render EditBookPage properly 1`] = `
+<div>
+  <BookForm
+    book={
+      Object {
+        "createdAt": 1,
+        "description": "Angular Book",
+        "id": "2",
+        "note": "Angular Book Notes",
+        "price": 10,
+      }
+    }
+    onSubmit={[Function]}
+  />
+  <button
+    onClick={[Function]}
+  >
+    Remove
+  </button>
+</div>
+`;
